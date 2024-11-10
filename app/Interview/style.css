@@ -1,0 +1,28 @@
+.card1{
+    width: 320px;
+    height: 350px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background:linear-gradient(45deg,rgb(24, 14, 14),rgb(46, 46, 195));
+    color: aliceblue;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: Oswald, sans-serif;
+  }
+  .card1:hover{
+    cursor: pointer;
+  }
+  img{
+    width: 100px;
+    height: 100px;
+  }
+  .div1{
+    font-weight: 900;
+    font-size: 30px;
+    /* font-family: Oswald, sans-serif; */
+  }

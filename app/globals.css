@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Curvy;
+  src: url(./fonts/PPNeueMontreal-Italic.ttf);
+}
+@font-face {
+  font-family: Neue;
+  src: url(./fonts/PPNeueMachina-InktrapVariable.ttf);
+}
+@font-face {
+  font-family: Geist;
+  src: url(./fonts/GeistVF.woff);
+}
+*{
+  font-family: Geist;
+}
+
+.signup-btn:hover .signup{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.signup-btn .signup{
+  transition: 0.4s ease-in-out;
+}
+body::-webkit-scrollbar{
+  position: absolute;
+  background-color: black;
+  width: 6px;
+}
+.aboutus::-webkit-scrollbar{
+  display: none;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: #cccccc52;
+  border-radius: 5px;
+}
+.ai::-webkit-scrollbar-thumb{
+  background-color: #cccccc52;
+  border-radius: 5px;
+}
+.ai::-webkit-scrollbar{
+  position: absolute;
+  background-color: black;
+  width: 6px;
+}
