@@ -3,6 +3,8 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 
 const MainComponent = ({baseUrl}) => {
+    console.log(baseUrl + "base Url maaawaaaaaaaaaaaaa");
+
 
   useEffect(() => {
     

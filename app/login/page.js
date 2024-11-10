@@ -5,6 +5,8 @@ import MainComponent from './MainComponent';
 const Page = () => {
 
     const BASE_URL = process.env.BASE_URL;
+    
+    
 
     return (
         <div>

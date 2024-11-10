@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 
 
 const MainComponent = ({baseUrl}) => {
+    console.log(baseUrl + "base Url maaawaaaaaaaaaaaaa");
     
     const [formData, setFormData] = useState({
         fullName: '',

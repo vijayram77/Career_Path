@@ -7,6 +7,7 @@ import axios from 'axios'
 
 
 const MainComponent = ({baseUrl}) => {
+    console.log(baseUrl + "base Url maaawaaaaaaaaaaaaa");
     
 
     const [formData, setFormData] = useState({
