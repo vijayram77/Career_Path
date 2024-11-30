@@ -1,11 +1,32 @@
 "use client"
 import axios from 'axios';
 import { easeInOut, motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 const MainComponent = ({baseUrl}) => {
-    console.log(baseUrl + "base Url maaawaaaaaaaaaaaaa");
+    const [toggle , setToggle ]  = useState(false)
+    
+    useEffect(() => {
+        const posttest = async () => {
+            try{
+              const res = await axios.get("http://localhost:4000/loggedin/",{
+                withCredentials : true
+              
+              });
+              console.log(res);
+              if(res){
+                setToggle(true)
+              }
+              
+            }
+            catch(e){
+              console.log(e);
+            }
+          }
+          posttest();
+    }, [])
+
     
     const [formData, setFormData] = useState({
         fullName: '',
@@ -104,16 +125,21 @@ const MainComponent = ({baseUrl}) => {
                     times: [0, 0.5, 1],
                     repeat: Infinity
                 }}
-                className='top-[40%] left-0 -translate-y-1/2 absolute w-[30vmax] h-[30vmax] rounded-full bg-gradient-to-br shadow-[-60px_-60px_10px_0px_#9D3AE6] from-[#ff3eec] via-[#B538C6] to-[#772699] blur-xl'>
+                className='top-[40%] right-0 -translate-y-1/2 absolute w-[30vmax] h-[30vmax] rounded-full bg-gradient-to-br shadow-[-60px_-60px_10px_0px_#9D3AE6] from-[#ff3eec] via-[#B538C6] to-[#772699] blur-xl'>
             </motion.div>
-            <div className='flex items-center gap-2  pt-6'>
+            
+            {
+                toggle ? 
+                
+                <div>
+                    <div className='flex items-center gap-2  pt-6'>
                 <div className='w-3 sm:h-[6vmax] h-[15vmax] bg-[#1e9eff] rounded-sm'></div>
                 <h1 className='text-[6vmax] font-semibold text-[#cccccc] relative tracking-tighter'>Resume Builder (Beta)</h1>
             </div>
             <h1 className='md:text-2xl text-xl text-[#ccccccb2] relative tracking-tighter py-4'>Let's create an ATS friendly resume, together.</h1>
 
 
-            <div className="max-w-xl ml-auto p-8 relative">
+            <div className="max-w-xl mr-auto p-8 relative">
                 <form className="space-y-6 text-zinc-200" onSubmit={handleSubmit}>
                     {/* Full Name */}
                     <div>
@@ -362,16 +388,27 @@ const MainComponent = ({baseUrl}) => {
                     <div className="flex justify-between items-center">
                         <button
                             type="submit"
-                            className="text-gray-100 border border-[#BB38C9] tracking-tighter px-4 py-2 rounded-full font-medium text-lg"
+                            className="text-gray-100 flex items-center border border-[#BB38C9] tracking-tighter px-4 py-2 rounded-full font-medium text-lg"
                         >
-                            Create My Resume
+                            <span className='inline-block'>Create My Resume</span>
+                        <span className="text-2xl inline-block pl-3">&rarr;</span>
                         </button>
-                        <span className="text-2xl">&rarr;</span>
                     </div>
                 </form>
             </div>
 
 
+                </div>
+                :
+                <div className='  pt-6'>
+                <div className='flex items-center gap-2'>
+                <div className='w-3 sm:h-[6vmax] h-[15vmax] bg-[#1e9eff] rounded-sm'></div>
+                <h1 className='text-[6vmax] font-semibold text-[#cccccc] relative tracking-tighter'>Resume Builder (Beta)</h1>
+                
+                </div>
+                <h1 className='text-xl text-[#cccccc9b] relative tracking-tighter'>Please Login To Access This Feature !</h1>
+            </div>
+            }
 
 
         </div>

@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef } from 'react'
+import React, {  useEffect, useRef } from 'react'
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css'
 import { ScrollTrigger } from 'gsap/all';
@@ -7,13 +7,13 @@ import gsap from 'gsap';
 import JAYHome from './HomePage/Home';
 import DummyRoadMap from './HomePage/DummyRoadMap';
 
-
 gsap.registerPlugin(ScrollTrigger)
 
 
-const page = () => {
-  
 
+const page = () => {
+
+  
 
 
   const scrollRef = useRef();

@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 const MainComponent = ({baseUrl}) => {
-    console.log(baseUrl + "base Url maaawaaaaaaaaaaaaa");
+    // console.log(baseUrl + "base Url maaawaaaaaaaaaaaaa");
     
 
     const [formData, setFormData] = useState({
@@ -20,7 +20,11 @@ const MainComponent = ({baseUrl}) => {
         e.preventDefault();
         try{
             const res = await axios.post(`${baseUrl}/signup`, formData , {
-                withCredentials : true
+                method: "OPTIONS",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                credentials: "include"
             })  
             if(res.status == 200){
                 alert("Account Created Successfully")

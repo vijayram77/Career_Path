@@ -20,7 +20,7 @@ const Eyes = () => {
 
     return (
         <div className='w-full h-screen bg-zinc-950 relative'>
-            <div className='w-full px-6 pt-[6vh] flex justify-center absolute md:top-0 top-[20%] left-1/2 -translate-x-1/2'>
+            <div className='w-full px-6 pt-[6vh] flex justify-center absolute md:top-0 top-[10%] left-1/2 -translate-x-1/2'>
                 <h1 className='text-zinc-500 font-semibold text-[8vmax] tracking-tighter capitalize '>Wanna Chat With </h1>
 
             </div>
